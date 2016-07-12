@@ -4,17 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-
     <title>Setup</title>
 
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="/data/MessageBoxes/messageboxes.css" type="text/css"/>
     <script src="/data/MessageBoxes/jquery.messageboxes.js"></script>
@@ -34,7 +29,7 @@
         }
     </style>
 
-    <script src="/bower_components/jquery-form/jquery.form.js"></script>
+    <script src="//oss.maxcdn.com/jquery.form/3.50/jquery.form.min.js"></script>
 
     <script type="text/javascript">
 

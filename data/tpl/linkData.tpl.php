@@ -55,24 +55,18 @@
     </div>
 
 
-    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-    <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-    <script src="/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.bootstrap.min.css">
+    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-    <script src="/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.0/css/select.bootstrap.min.css">
+    <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
 
-    <link rel="stylesheet" href="/bower_components/datatables.net-select-bs/css/select.bootstrap.min.css">
-    <script src="/bower_components/datatables.net-select/js/dataTables.select.min.js"></script>
-
-    <script src="/bower_components/jquery-form/jquery.form.js"></script>
-
-    <script src="/bower_components/jquery-confirm/jquery.confirm.min.js"></script>
+    <script src="/data/js/jquery.confirm.min.js"></script>
 
     <style type="text/css" title="currentStyle">
         #link_length {

@@ -9,10 +9,10 @@
 
     <title><?php echo !empty($htmlTitle) ? $htmlTitle : 'Starter Template for Bootstrap'; ?></title>
 
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="/data/MessageBoxes/messageboxes.css" type="text/css"/>
     <script src="/data/MessageBoxes/jquery.messageboxes.js"></script>
