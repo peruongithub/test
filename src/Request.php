@@ -163,7 +163,6 @@ class Request extends Object
             $method = Server::getMethod();
             $userAgent = Server::getUserAgent();
             $params = \array_replace_recursive(
-                $params,
                 [
                     'protocol' => static::$defaultProtocol,
                     'method' => $method,
@@ -183,7 +182,8 @@ class Request extends Object
                     //.substr(URL::detect_uri(),1),
                     'headers' => Header::getHeaderFromRequest(),
                     'secure' => Server::isSecure(),
-                ]
+                ],
+                $params
             );
             if ($method !== Server::GET) {
                 $input = fopen("php://input", "rb");
@@ -201,9 +201,18 @@ class Request extends Object
         }
         */
 
+        $this->setURI($this->uri);
+
         $this->response = new Response($this, []);
 
-        if (!empty($this->uri)) {
+
+        $this->initHeaderTrait();
+
+        $this->extractParams();
+    }
+
+    public function setURI($uri = null){
+        if (!empty($uri)) {
             // Cleanse query parameters from URI (faster that parse_url())
             $split_uri = explode('?', $this->uri);
             $this->uri = array_shift($split_uri);
@@ -220,9 +229,6 @@ class Request extends Object
                 $this->incoming = false;
             }
         }
-        $this->initHeaderTrait();
-
-        $this->extractParams();
     }
 
     public function extractParams()
