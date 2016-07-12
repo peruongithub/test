@@ -79,7 +79,7 @@ $coreProperties = [
                 [
                     'link',
                     '<code>',
-                    ['code' => '^(?!(link|null))[A-Za-z0-9]+'],
+                    ['code' => '^(?!(link|setup|user|null))[A-Za-z0-9]+'],
                     ['controller' => 'link', 'action' => 'index'],
                 ],
                 ['restLink', 'link(/<code>)', ['code' => '[A-Za-z0-9]+'], ['controller' => 'link', 'action' => 'link']],
@@ -111,7 +111,15 @@ $coreProperties = [
 
 $request = (new \trident\Request());
 
-$response = $request->execute();
+
+$installed = require('./components/installed.php');
+
+if (!$installed && 'setup' !== trim($request->getUri(),'/')) {
+    $request->redirect(\trident\URL::base('http',null,null,null,'setup'));
+    $response = $request->getResponse();
+}else{
+    $response = $request->execute();
+}
 
 $status = $response->status();
 $isAjax = $request->is_ajax();
