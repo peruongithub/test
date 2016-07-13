@@ -1,13 +1,4 @@
 <?php
-/**
- * This file is part of the Trident package.
- *
- * Perederko Ruslan <perederko.ruslan@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace components;
 
 
@@ -87,14 +78,14 @@ class CountryModel
         try {
             $this->db->exec($sql);
         } catch (\PDOException $e) {
-            return new ModelResponse($e->getMessage(), null, ModelResponse::CREATE, ModelResponse::FAILURE);
+            return new ModelResponse($e->getMessage(), null, Action::CREATE, Status::FAILURE);
         }
 
         return new ModelResponse(
             'Country schema successfully created.',
             null,
-            ModelResponse::CREATE,
-            ModelResponse::SUCCESS
+            Action::CREATE,
+            Status::SUCCESS
         );
     }
 
@@ -117,7 +108,7 @@ class CountryModel
             $sql = 'INSERT IGNORE INTO `country` (`code`, `name`) VALUES '.$sql;
             $stmt = $this->db->query($sql);
         } catch (\PDOException $e) {
-            return new ModelResponse($e->getMessage(), null, ModelResponse::INSERT, ModelResponse::FAILURE);
+            return new ModelResponse($e->getMessage(), null, Action::INSERT, Status::FAILURE);
         }
 
         $stmt->closeCursor();
@@ -125,8 +116,8 @@ class CountryModel
         return new ModelResponse(
             'Table `country` was successful created and filled.',
             null,
-            ModelResponse::INSERT,
-            ModelResponse::SUCCESS
+            Action::INSERT,
+            Status::SUCCESS
         );
     }
 }

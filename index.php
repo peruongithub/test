@@ -114,7 +114,7 @@ $request = (new \trident\Request());
 
 $installed = require('./components/installed.php');
 
-if (!$installed && 'setup' !== trim($request->getUri(),'/')) {
+if (!$installed && !in_array(trim($request->getUri(),'/'),['setup','setup/dbConfig','setup/done'])) {
     $request->redirect(\trident\URL::base('http',null,null,null,'setup'));
     $response = $request->getResponse();
 }else{

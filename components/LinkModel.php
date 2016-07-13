@@ -389,7 +389,7 @@ class LinkModel extends DataTableModel
     public final function createSchema()
     {
         $sql = <<<'sql'
-CREATE TABLE `link` (
+CREATE TABLE IF NOT EXISTS `link` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `link` VARCHAR(1024) NOT NULL,
   `user` INT(11) NOT NULL,
