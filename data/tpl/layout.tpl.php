@@ -26,6 +26,9 @@
         div.row {
             padding: 10px 0px;
         }
+        ul.navbar-nav > li > a > span.glyphicon{
+            margin-right: 5px;
+        }
     </style>
 
     <script type="text/javascript">
