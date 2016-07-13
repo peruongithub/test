@@ -78,7 +78,7 @@ class incomingRequestHandler
         if (empty($route)) {
             $route = $request->query('r');
         }
-        $this->controller = Core::getAppComponentFromRoute($route, $request, $response);
+
         try {
             $this->controller = Core::getAppComponentFromRoute($route, $request, $response);
         } catch (\Exception $e) {
