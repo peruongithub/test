@@ -185,6 +185,7 @@ class UserTriad extends MainTriad
 
     public function myAccount(array $actions)
     {
+        $data['htmlTitle'] = 'My account';
         $data['mainContent'] = DI::get('render')->fetch('./data/tpl/myAccount.tpl.php', $actions, $this);
 
         return $data;

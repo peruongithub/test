@@ -17,7 +17,10 @@ class MainTriad extends Triad
 {
     public function index()
     {
-        return ['mainContent' => 'Only for demonstration'];
+        return [
+            'htmlTitle' => 'Simple url minimization',
+            'mainContent' => 'Only for demonstration'
+        ];
     }
 
     public function init($options = null)
