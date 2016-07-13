@@ -5,7 +5,10 @@ $(document).ajaxComplete(function (event, jqXHR, ajaxOptions) {
     } else {
         var requestedURL = jqXHR.getResponseHeader("X-requested-url");
         if (ajaxOptions.url !== requestedURL) {
-            window.location = requestedURL;
+            if(requestedURL.length >0){//prevent "you host name"/null redirection
+                window.location = requestedURL;
+            }
+
             return false;
         }
     }
