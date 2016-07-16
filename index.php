@@ -101,6 +101,12 @@ $coreProperties = [
             ],
 
         ],
+        'page' => [
+            'className' => 'components\\PagesTriad',
+            'routes' => [
+                ['page', 'page/<page>', ['page' => '[A-Za-z0-9_-]+'], ['controller' => 'page', 'action' => 'index']]
+            ]
+        ]
     ],
     'defaultAppComponent' => 'main',
     'defaultAction' => 'index',

@@ -70,8 +70,11 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php echo \trident\URL::base(); ?>"><span
                             class="glyphicon glyphicon-home"></span>Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="<?php echo \trident\Route::url(
+                            'page_page',
+                            ['page' => 'about']
+                        ); ?>">About</a></li>
+                
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php

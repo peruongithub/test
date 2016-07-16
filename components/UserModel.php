@@ -67,6 +67,7 @@ class UserModel
             'country_id' => '0',
             'country_code' => GeoIPBase::getClientRegionCode(),
             'country_name' => 'undefined',
+            'minPassLen' => self::MIN_PASS_LEN
         ];
     }
 

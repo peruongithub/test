@@ -201,6 +201,9 @@ class Triad extends Component
 
     protected function getActionConfig($action)
     {
+        if (!empty($action) && false !== ($pos = strrpos($action, ':'))) {
+            $action = substr($action, $pos + 1);
+        }
         if (!isset($this->actions[$action])) {
             return false;
         }
@@ -305,8 +308,6 @@ class Triad extends Component
             return $object->$method();
         }
     }
-
-    //получение переменных рекурсией - принцип наследования
 
     /**
      * @param array $config

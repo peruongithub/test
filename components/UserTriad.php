@@ -96,12 +96,11 @@ class UserTriad extends MainTriad
 
         $data['url'] = $this->createUrl(__METHOD__);
         $data['method'] = Request::POST;
-        $data['errors'] = '';
         $countryModel = DI::get('countryModel');
         $data['country_list'] = $countryModel->getCountryData(Request::initial(), CountryModel::SELECT_ALL);
 
-        $data['checkUniqueLogin'] = $this->createUrl('checkUniqueLogin');
-        $data['checkUniqueEmail'] = $this->createUrl('checkUniqueEmail');
+        $data['checkUniqueLogin'] = $this->createUrl('checkUniqueLogin',Route::DEF_ROUTE_NAME, $this->getRout());
+        $data['checkUniqueEmail'] = $this->createUrl('checkUniqueEmail',Route::DEF_ROUTE_NAME, $this->getRout());
 
         if (Request::POST === $this->request->method()) {
             //'set'
@@ -141,7 +140,8 @@ class UserTriad extends MainTriad
 
         $countryModel = DI::get('countryModel');
         $data['country_list'] = $countryModel->getCountryData(Request::initial(), CountryModel::SELECT_ALL);
-
+        $data['checkUniqueLogin'] = $this->createUrl('checkUniqueLogin',Route::DEF_ROUTE_NAME, $this->getRout());
+        $data['checkUniqueEmail'] = $this->createUrl('checkUniqueEmail',Route::DEF_ROUTE_NAME, $this->getRout());
         $data = array_replace($data, $userData);
 
         if (Request::POST === $this->request->method()) {
@@ -165,7 +165,7 @@ class UserTriad extends MainTriad
         $data = [
             'uri' => $this->createUrl(__METHOD__, Route::DEF_ROUTE_NAME, $this->getRout()),
             'method' => Request::POST,
-            'errors' => '',
+            'minPassLen' => UserModel::MIN_PASS_LEN,
         ];
         if (Request::POST === $this->request->method()) {
             //'set'
@@ -196,7 +196,7 @@ class UserTriad extends MainTriad
      */
     public function checkUniqueLogin()
     {
-        return $this->model->isUnique($this->request, null, UserModel::LOGIN);
+        return ['valid' => $this->model->isUnique($this->request, null, UserModel::LOGIN)];
     }
 
     /**
@@ -204,6 +204,6 @@ class UserTriad extends MainTriad
      */
     public function checkUniqueEmail()
     {
-        return $this->model->isUnique($this->request, null, UserModel::EMAIL);
+        return ['valid' => $this->model->isUnique($this->request, null, UserModel::EMAIL)];
     }
 }

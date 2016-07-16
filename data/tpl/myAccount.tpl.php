@@ -12,11 +12,11 @@
 
         <script src="//oss.maxcdn.com/jquery.form/3.50/jquery.form.min.js"></script>
 
-        <style type="text/css" title="currentStyle">
-            input {
-                margin: 5px 0px;
-            }
-        </style>
+        <!-- bootstrap-validator -->
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+
         <?php echo $myPersonalData; ?>
         <?php echo $changePassword; ?>
     </div>
