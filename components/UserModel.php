@@ -474,7 +474,7 @@ class UserModel
         $passInDB = $stmt->fetchColumn();
 
         if ($passInDB !== $oldPassword) {
-            return new UserError('Wrong old password.');
+            return new ModelResponse('Wrong old password.', null, Action::VALIDATE, Status::ERROR);
         }
         $stmt->closeCursor();
 
